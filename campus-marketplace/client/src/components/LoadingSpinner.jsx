@@ -1,1 +1,3 @@
-export default function LoadingSpinner(){return <div className="center">Loading...</div>}
+export default function LoadingSpinner() {
+  return <div className="center">Loading...</div>;
+}

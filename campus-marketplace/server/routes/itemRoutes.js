@@ -1,1 +1,13 @@
-const router=require('express').Router();const c=require('../controllers/itemController');const {protect,adminOnly}=require('../middleware/auth');const upload=require('../middleware/upload');router.get('/',c.getItems);router.get('/my-listings',protect,c.myListings);router.get('/:id',c.getItem);router.post('/',protect,upload.array('images',5),c.createItem);router.put('/:id',protect,upload.array('images',5),c.updateItem);router.delete('/:id',protect,c.deleteItem);router.patch('/:id/sold',protect,c.sold);router.delete('/:id/admin',protect,adminOnly,c.adminDelete);module.exports=router;
+const router = require("express").Router();
+const c = require("../controllers/itemController");
+const { protect, adminOnly } = require("../middleware/auth");
+const upload = require("../middleware/upload");
+router.get("/", c.getItems);
+router.get("/my-listings", protect, c.myListings);
+router.get("/:id", c.getItem);
+router.post("/", protect, upload.array("images", 5), c.createItem);
+router.put("/:id", protect, upload.array("images", 5), c.updateItem);
+router.delete("/:id", protect, c.deleteItem);
+router.patch("/:id/sold", protect, c.sold);
+router.delete("/:id/admin", protect, adminOnly, c.adminDelete);
+module.exports = router;
