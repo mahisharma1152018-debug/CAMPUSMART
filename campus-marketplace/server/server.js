@@ -19,10 +19,9 @@ const app = express();
    CORS
 ========================= */
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  process.env.CLIENT_URL,
-].filter(Boolean);
+const allowedOrigins = ["http://localhost:5173", process.env.CLIENT_URL].filter(
+  Boolean,
+);
 
 app.use(
   cors({
@@ -40,7 +39,7 @@ app.use(
       return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
-  })
+  }),
 );
 
 /* =========================
@@ -54,10 +53,7 @@ app.use(express.urlencoded({ extended: true }));
    Static Uploads
 ========================= */
 
-app.use(
-  "/uploads",
-  express.static(path.join(__dirname, "uploads"))
-);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 /* =========================
    Root Route

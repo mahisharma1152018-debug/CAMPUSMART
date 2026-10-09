@@ -67,7 +67,6 @@ Frontend is prepared for Vercel and backend for Render. Set `VITE_API_URL` on Ve
 Local `server/uploads` storage is suitable for development. Render's filesystem is not intended as permanent image storage, so move uploads to Cloudinary or another object-storage provider before relying on persistent production images. The controller already stores URL-like paths so the storage layer can be replaced later.
 
 ## Open-source contribution opportunities
-These are intentionally isolated so contributors can work without changing the core architecture:
 1. **Saved searches / favorites** — add a Favorite model and favorite toggle for listings.
 2. **Price-range quick filters** — add preset buttons such as Under ₹500 / ₹1,000 / ₹5,000 with backend query parameters.
 3. **Seller rating** — add a small post-sale rating model and seller summary after an item is sold.
